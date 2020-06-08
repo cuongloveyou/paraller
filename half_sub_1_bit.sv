@@ -1,9 +1,9 @@
 module half_sub_1_bit(
-  input a, b,
-  output sub, cout
+  input in1, in2,
+  output reg sub, out
   );
   
-  xor x1(sub, a, b);
- and a1(cout, ~a, b);
+  assign sub = in1+in2;
+  assign out = ~in1*in2;
   
 endmodule
