@@ -2,7 +2,7 @@ module add_5_reg(
   input [7:0] in1, in2, in3, in4, in5,
   output [11:0] out
   );
-  wire [11:0] tmp1;
+  wire [11:0] tmp1, tmp2, tmp3, tmp4;
   assign out = in1 + in2 + in3 + in4 + in5;
   
   add_12bit a1({4'b0, in1}, {4'b0, in2}, tmp1);
