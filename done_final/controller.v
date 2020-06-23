@@ -27,7 +27,10 @@ else
 begin
   act <= act_p[1];
   if(done)
+    begin
   rd <= 0;
+  act <= 0;
+end
   else
   rd <= rd_p;
 end

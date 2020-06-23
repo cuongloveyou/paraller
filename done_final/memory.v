@@ -210,11 +210,11 @@ begin
       begin
         {rd8,rd7,rd6,rd5,rd4,rd3,rd2,rd1} <= 8'b10000000;
       end
-      else if(cnt == 57357) //cnt rd + 11
+      else if(cnt == 57357) //cnt rd + 13
       begin
         {wr8,wr7,wr6,wr5,wr4,wr3,wr2,wr1} <= 8'b10000000;
       end
-    else if(cnt == 65536)
+    else if(cnt == 65549)
       begin
         done <= 1'b1;
       end
