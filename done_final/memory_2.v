@@ -8,13 +8,12 @@ output reg [7:0]pixelr1,pixelr2,pixelr3,pixelr4,pixelr5,pixelr6,pixelr7,pixelr8,
 
 parameter _1b1 = 1'b1;
 
-reg [7:0]mem_read[0:33][0:257];
+reg [7:0]mem_read[0:8771];
 reg [7:0]mem_write[0:8771];
 reg [14:0]i;
 reg [8:0]j;
 reg [14:0]cnt;
-initial 
-$readmemh("/home/lab/ddas/aaaa/memory_2.mem",mem_read); 
+
 always @(posedge clk)
 begin
 if (!rst_n)

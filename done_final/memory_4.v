@@ -16,7 +16,6 @@ reg [14:0]cnt;
 
 always @(posedge clk)
 begin
-$readmemh("\/home\/lab\/ddas\/aaaa\/memory_4.txt",mem_read);
 if (!rst_n)
   begin
     i <= 0;
