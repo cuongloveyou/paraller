@@ -1,8 +1,10 @@
 module parallerFilter_tb();
   integer i;
   reg clk,rst_n,en;
-  reg [7:0]mem_read1[0:8771], mem_read2[0:8771], mem_read3[0:8771], mem_read4[0:8771], mem_read5[0:8771], mem_read6[0:8771], mem_read7[0:8771], mem_read8[0:8771];
-  parallerFilter pp( clk, rst_n, en);
+  reg [7:0] mem_read1[0:8771], mem_read2[0:8771], mem_read3[0:8771], mem_read4[0:8771], mem_read5[0:8771], mem_read6[0:8771], mem_read7[0:8771], mem_read8[0:8771];
+  wire rd;
+  wire [7:0]cl_pixel;
+  parallerFilter pp( clk, rst_n, en, rd, cl_pixel);
   
 initial 
 begin

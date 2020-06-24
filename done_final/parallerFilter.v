@@ -1,9 +1,10 @@
 module parallerFilter(
-  input clk, rst_n, en
+  input clk, rst_n, en,
+  output rd, 
+  output [7:0] cl_pixel
   );
   
-  wire rd, wr, act, done; // wr k dung
-  wire [7:0] cl_pixel;
+  wire wr, act, done; // wr k dung
   wire [7:0]pixelr1,pixelr2,pixelr3,pixelr4,pixelr5,pixelr6,pixelr7,pixelr8,pixelr9;
   
   controller ctrl(clk, rst_n, en, done, rd, act);
