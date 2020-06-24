@@ -1,7 +1,6 @@
 module filter(
   input clk, rst_n, en, act,
   input [7:0] sw_pixels1, sw_pixels2, sw_pixels3, sw_pixels4, sw_pixels5, sw_pixels6, sw_pixels7, sw_pixels8, sw_pixels9,
-  output wr,
   output [7:0] cl_pixel
   );
   
@@ -87,12 +86,6 @@ wire [11:0] add_out_8b_1, add_out_8b_2, add_B ;
   
   divider_16bit d16(clk, rst_n, reg_AB[15:0], reg_AB[23:16], cl_pixel);
 
-  assign wr = result;
-  
-  always @(cl_pixel) begin
-     result = 1'b1;
-  end
-  
   always @(posedge clk)
   begin
     if(act & rst_n) begin
@@ -116,13 +109,13 @@ wire [11:0] add_out_8b_1, add_out_8b_2, add_B ;
      reg_AB <= {add_B[11:4], add_A[19:4]}; // 24bit
    end
    else if(!rst_n) begin
-	reg_mul_1 <= 136'b?;
-	reg_mul_2 <= 136'b?;
-	reg_mul_3 <= 136'b?;
-	reg_mul_4 <= 136'b?;
-	reg_add    <= 216'b?;
-	reg_preAB <= 64'b?;
-	reg_AB      <= 24'b?;
+	reg_mul_1 <= 136'd0;
+	reg_mul_2 <= 136'd0;
+	reg_mul_3 <= 136'd0;
+	reg_mul_4 <= 136'd0;
+	reg_add    <= 216'd0;
+	reg_preAB <= 64'd0;
+	reg_AB      <= 24'd0;
 
   end
        
