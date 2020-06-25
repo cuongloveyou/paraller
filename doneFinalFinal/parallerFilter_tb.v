@@ -19,8 +19,10 @@ end
 initial
 begin
   
-rst_n = 0;
+rst_n = 1;
 en = 0;
+#1
+rst_n = 0;
 #3
 en = 1;
 rst_n = 1;
