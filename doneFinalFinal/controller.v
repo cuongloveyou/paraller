@@ -13,7 +13,7 @@ module controller(
   output reg rd,
   output reg act
   );
-wire [2:0]act_p;
+wire act_p;
 wire rd_p;
 //reg data_in;  
 always @(posedge clk)
@@ -25,7 +25,7 @@ act <= 1'b0;
 end
 else
 begin
-  act <= act_p[0];
+  act <= act_p;
   if(done)
     begin
   rd <= 0;
@@ -36,7 +36,5 @@ end
 end
 end 
 DFF  D1(clk,rst_n,en,en,rd_p);
-DFF  D2(clk,rst_n,en,rd_p,act_p[0]);
-DFF  D3(clk,rst_n,en,act_p[0],act_p[1]);
-DFF  D4(clk,rst_n,en,act_p[1],act_p[2]);
+DFF  D2(clk,rst_n,en,rd_p,act_p);
 endmodule    
